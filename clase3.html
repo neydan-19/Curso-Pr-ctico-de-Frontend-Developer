@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
         :root{
@@ -70,9 +67,18 @@
             padding: 6px;
             margin-bottom: 12px;
         }
+        .input-email{
+            margin-bottom: 18px;
+        }
         form{
             display: flex;
             flex-direction: column;
+        }
+        form a{
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            margin-bottom: 35px;
         }
         .primary-button{
             background-color: var(--hospital-green);
@@ -85,9 +91,28 @@
             font-weight: bold;
             height: 50px;
         }
+        .secondary-button{
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
         .login-button{
-            margin-top: 14px;
-            margin-bottom: 30px;
+            margin-top: 12px;
+            margin-bottom: 38px;
+        }
+        @media (max-width:640px){
+            .secondary-button{
+                width: 300px;
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 20px;
+            }
         }
         @media (min-width:640px){
             .logo{
@@ -101,25 +126,23 @@
         <div class="form-container">
             <img src="./img/logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-            <h1 class="title">
-                Create a new password
-            </h1>
-            <p class="subtitle">
-                Enter a new password for you account
-            </p>
-            
             <form action="">
+                <label for="email" class="label">
+                    Email address
+                </label>
+                <input type="text" id="email" placeholder="bradvelarde@gmail.com" class="input input-email">
+
                 <label for="password" class="label">
                     Password
                 </label>
                 <input type="password" id="password" placeholder="*********" class="input input-password">
 
-                <label for="new-password" class="label">
-                    Re-Enter password
-                </label>
-                <input type="password" id="new-password" placeholder="*********" class="input input-password">
+                <input type="submit" value="Login" class="primary-button login-button">
 
-                <input type="submit" value="Confirm" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
+                <form action="">
+                    <button class="secondary-button signup-button">Sign up</button>
+                </form>
             </form>
         </div>
     </div>
